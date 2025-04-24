@@ -1,30 +1,35 @@
 const username = "admin";
 
-function renderPost(post) {
-    const template = document.getElementById("post-template").content.cloneNode(true);
-    template.querySelector(".username").innerText = post.username;
-    template.querySelector(".message").innerText = post.message;
+function renderPost(post, isNew = false) {
+  const template = document
+    .getElementById("post-template")
+    .content.cloneNode(true);
+  template.querySelector(".username").innerText = post.username;
+  template.querySelector(".message").innerText = post.message;
+
+  if (isNew) {
+    document.getElementById("feed").prepend(template);
+  } else {
     document.getElementById("feed").appendChild(template);
+  }
 }
 
 async function submitPost() {
     const message = document.getElementById("postInput").value;
-    try{
-        const reponse = await fetch("/api/add_posts", {
-            method: "POST" ,
-            headers: {
-                "Content-Type": "application/json",
-
-            },
-            body: JSON.stringify({
-                username,
-                message,
-            })
-        })
-    } catch (error){
-        console.log("😭😭😭 Post failed", error)
+    try {
+      const response = await fetch("/api/add_posts", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ username, message }),
+      });
+      if (response.ok) {
+        renderPost({ username, message }, true); // Pass `isNew = true`
+        document.getElementById("postInput").value = ""; // Clear the input box
+      }
+    } catch (error) {
+      console.error("Error submitting post:", error);
     }
-}
+  }
 
 window.onload = async () => {
     try {
