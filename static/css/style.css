@@ -1,0 +1,57 @@
+/* style.css */
+
+body {
+    font-family: sans-serif;
+    background-color: #000000;
+    padding: 20px;
+}
+
+#feed {
+    margin-top: 30px;
+}
+button {
+    background-color: #007BFF;  /* Blue background */
+    color: white;               /* White text color */
+    border: none;               /* Remove default border */
+    padding: 10px 20px;         /* Add padding for size */
+    border-radius: 25px;        /* Round corners */
+    font-size: 16px;            /* Font size */
+    cursor: pointer;           /* Change cursor to pointer on hover */
+    transition: background-color 0.3s ease; /* Smooth transition */
+  }
+  
+  button:hover {
+    background-color: #0056b3;  /* Darker blue on hover */
+  }
+  h1, h3, strong {
+    color: white;  /* Make headings and bold text white */
+}
+.top-image {
+    width: 50%;      /* Set width to 50% of the screen width (adjust this as needed) */
+    height: auto;     /* Maintain the aspect ratio */
+    display: block;   /* Remove extra space below the image */
+    margin: 0 auto 20px; /* Center the image and add space below it */
+}
+textarea {
+    background-color: #444;    /* Dark background for the textarea */
+    color: white;              /* White text for what the user types */
+    border: 1px solid #ccc;    /* Light border around the textarea */
+    padding: 10px;             /* Padding for the textarea */
+    width: 100%;               /* Make the textarea take up full width */
+    border-radius: 5px;        /* Slightly rounded corners */
+    font-size: 16px;           /* Font size for text inside textarea */
+}
+
+/* Style for the posts (tweets) themselves */
+.post {
+    color: white; /* Make text within posts white */
+    background-color: #333; /* Dark background for the posts */
+    padding: 15px;
+    border-radius: 10px; /* Round the corners of the post */
+    margin-bottom: 15px; /* Space between posts */
+}
+
+/* Additional styling for the feed */
+#feed {
+    margin-top: 30px;
+}
