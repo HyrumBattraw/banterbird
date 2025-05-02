@@ -1,22 +1,24 @@
+
 <!DOCTYPE html>
 <html>
 <head>
     <title>Banterbird</title>
     <script src="/static/js/app.js" defer></script>
     <link rel="stylesheet" href="/static/css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Flex:opsz,wght@8..144,100..1000&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
 </head>
 <body>
-    
-    <!-- Updated image file name -->
-    <img src="BanterBirdJPG.jpg" alt="Banterbird Screenshot" class="top-image" style="max-width: 100%; height: auto;">
-
+    <img src="/static/images/BanterBirdJPG.jpg" alt="Banterbird Screenshot" class="top-image" style="max-width: 100%; height: auto;">
+    <h1>Banterbird</h1>
     <div>
-         <strong id="username">Logged in as: anonymous</strong>
+        Logged in as: <strong id="username">anonymous</strong>
     </div>
     <div>
-        <h3>New Post</h3>
+        <h3></h3>
         <textarea id="postInput" placeholder="What's on your mind?"></textarea><br>
-        <button onclick="submitPost()">Tweet</button>
+        <button id = "button" onclick="submitPost()">Tweet</button>
     </div>
     <hr>
     <h3>Feed</h3>
@@ -30,7 +32,7 @@
         </div>
     </template>
     <script>
-        document.getElementById("username").innerText = localStorage.getItem("username");
+        document.getElementById('username').innerText = localStorage.getItem('username');
     </script>
 </body>
 </html>
